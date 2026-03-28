@@ -53,7 +53,7 @@ const Hero = () => {
               className="text-sm font-medium tracking-wide uppercase" 
               style={{color: colors.textTertiary}}
             >
-              Swasya AI
+              Medix AI
             </span>
           </div>
 

@@ -1,4 +1,4 @@
-/// Swasya AI Animation Configuration
+/// Medix AI Animation Configuration
 /// 
 /// Consistent animation timings and curves for the entire application.
 

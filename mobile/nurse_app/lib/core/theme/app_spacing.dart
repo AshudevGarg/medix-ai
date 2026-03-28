@@ -1,4 +1,4 @@
-/// Swasya AI Spacing System
+/// Medix AI Spacing System
 /// 
 /// Consistent spacing scale for the entire application.
 /// Based on Tailwind CSS spacing convention.

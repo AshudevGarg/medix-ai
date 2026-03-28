@@ -1,4 +1,4 @@
-/// Swasya AI Color System - Medical AI Theme
+/// Medix AI Color System - Medical AI Theme
 /// 
 /// Color palette for the entire application.
 /// Change colors here to update throughout the app.

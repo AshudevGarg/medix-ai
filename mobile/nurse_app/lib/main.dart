@@ -16,11 +16,11 @@ void main() {
     ),
   );
   
-  runApp(const SwasyaAIApp());
+  runApp(const MedixAIApp());
 }
 
-class SwasyaAIApp extends StatelessWidget {
-  const SwasyaAIApp({super.key});
+class MedixAIApp extends StatelessWidget {
+  const MedixAIApp({super.key});
 
   @override
   Widget build(BuildContext context) {

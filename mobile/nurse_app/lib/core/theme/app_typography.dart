@@ -1,4 +1,4 @@
-/// Swasya AI Typography System
+/// Medix AI Typography System
 /// 
 /// Typography scale for the entire application.
 /// Based on Inter font family with PT Serif for special cases.

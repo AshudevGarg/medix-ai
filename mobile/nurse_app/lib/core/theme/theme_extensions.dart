@@ -1,4 +1,4 @@
-/// Swasya AI Theme Extensions
+/// Medix AI Theme Extensions
 /// 
 /// Convenient extension methods for accessing theme values.
 

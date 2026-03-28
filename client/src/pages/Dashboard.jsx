@@ -123,8 +123,8 @@ const Dashboard = () => {
   }
 
   // Navigation handlers
-  const handleSwasyaMapClick = () => {
-    navigate('/swasya-map')
+  const handleMedixMapClick = () => {
+    navigate('/medix-map')
   }
 
   // Mobile utility functions
@@ -249,7 +249,7 @@ const Dashboard = () => {
             className="text-lg sm:text-xl font-ptserif font-medium"
             style={{ color: colors.textSecondary }}
           >
-            Swasya AI
+            Medix AI
           </h1>
           
           {/* Desktop Dashboard Label & Navigation */}
@@ -269,14 +269,14 @@ const Dashboard = () => {
           {/* Desktop Navigation Buttons */}
           <div className="hidden lg:flex items-center gap-3 ml-6">
             <button
-              onClick={handleSwasyaMapClick}
+              onClick={handleMedixMapClick}
               className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:opacity-80"
               style={{
                 backgroundColor: colors.primary,
                 color: colors.surface
               }}
             >
-              Swasya Map
+              Medix Map
             </button>
           </div>
 
@@ -305,14 +305,14 @@ const Dashboard = () => {
             >
               <div className="p-4 space-y-3">
                 <button
-                  onClick={handleSwasyaMapClick}
+                  onClick={handleMedixMapClick}
                   className="w-full flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                   style={{
                     backgroundColor: colors.primary,
                     color: colors.surface
                   }}
                 >
-                  Swasya Map
+                  Medix Map
                 </button>
               </div>
             </div>
