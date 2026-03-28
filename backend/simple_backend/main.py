@@ -4,18 +4,17 @@ Version: 3.0.0
 Features: Queue Management, Groq Whisper, Gemini Vision, Organized Architecture
 """
 
-from fastapi import FastAPI
+# MUST BE FIRST: Load environment variables before any other imports
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import patients, queue, uploads, notes, documents, reports
 from app.services.storage_service import storage
 from app.services.mongo_service import mongo_service
 from app.services.mongodb_storage import mongodb_storage
-import os
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
 
 # Verify required API keys
 required_keys = ['GEMINI_API_KEY', 'GROQ_API_KEY']

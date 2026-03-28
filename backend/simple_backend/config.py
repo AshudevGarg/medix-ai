@@ -3,7 +3,7 @@
 import os
 
 # Storage paths
-BASE_DIR = "/app/data"
+BASE_DIR = "data"
 PATIENTS_FILE = f"{BASE_DIR}/patients.json"
 QUEUE_FILE = f"{BASE_DIR}/queue.json"
 NOTES_FILE = f"{BASE_DIR}/notes.json"

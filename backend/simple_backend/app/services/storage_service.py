@@ -11,7 +11,11 @@ from datetime import datetime
 class StorageService:
     """Handles all file-based data storage"""
     
-    def __init__(self, base_dir: str = "/app/data"):
+    def __init__(self, base_dir: str = None):
+        # Use local data directory for development
+        if base_dir is None:
+            base_dir = "data"
+        
         self.base_dir = base_dir
         self.patients_file = f"{base_dir}/patients.json"
         self.queue_file = f"{base_dir}/queue.json"

@@ -4,10 +4,8 @@ class Config {
   // For iOS Simulator use localhost
   // For Real Device use your computer's IP address (192.168.0.7)
   
-  // IMPORTANT: Update this based on your device type!
-  static const String apiBaseUrl = 'https://api.swasya.rishia.in'; // Real device (YOUR IP)
-  // static const String apiBaseUrl = 'http://10.0.2.2:8000'; // Android emulator
-  // static const String apiBaseUrl = 'http://localhost:8000'; // iOS simulator  
+  // IMPORTANT: This is auto-updated by setup-ip.sh - modify the .env file to change
+  static const String apiBaseUrl = 'http://192.168.1.228:8000'; // Real device (YOUR IP)  
   
   // API Endpoints - Updated for new modular backend
   static const String patientsEndpoint = '$apiBaseUrl/patients';

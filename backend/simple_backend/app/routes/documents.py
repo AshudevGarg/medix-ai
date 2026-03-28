@@ -14,7 +14,7 @@ from typing import Optional
 
 router = APIRouter(prefix="/documents", tags=["Document Scanning & Timeline"])
 
-UPLOADS_DIR = "/app/data/uploads"
+UPLOADS_DIR = "data/uploads"
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 
 

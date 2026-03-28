@@ -12,7 +12,7 @@ from typing import Optional
 
 router = APIRouter(prefix="/upload", tags=["Uploads & Processing"])
 
-UPLOADS_DIR = "/app/data/uploads"
+UPLOADS_DIR = "data/uploads"
 os.makedirs(UPLOADS_DIR, exist_ok=True)
 
 

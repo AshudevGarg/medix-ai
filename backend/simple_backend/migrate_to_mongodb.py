@@ -13,7 +13,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 # MongoDB connection
 MONGODB_URL = os.environ.get('MONGODB_URL', 'mongodb://admin:phc2024@mongodb:27017/phc?authSource=admin')
-DATA_DIR = Path("/app/data")
+DATA_DIR = Path("data")
 
 
 async def migrate_data():
