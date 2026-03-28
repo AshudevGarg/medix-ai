@@ -1,0 +1,18 @@
+procs:
+  backend:
+    cmd:
+      - "bash"
+      - "-c"
+      - "cd backend/simple_backend && (. .env 2>/dev/null || true) && python3 -m uvicorn main:app --reload --port 8000 --host 0.0.0.0"
+    autostart: true
+    autorestart: true
+    stop: "SIGTERM"
+
+  frontend:
+    cmd:
+      - "bash"
+      - "-c"
+      - "cd client && (. .env 2>/dev/null || true) && pnpm run dev"
+    autostart: true
+    autorestart: true
+    stop: "SIGTERM"
