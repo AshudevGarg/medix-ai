@@ -1,5 +1,5 @@
 /// Medix AI Theme Extensions
-/// 
+///
 /// Convenient extension methods for accessing theme values.
 
 import 'package:flutter/material.dart';
@@ -10,46 +10,46 @@ import 'app_spacing.dart';
 extension ThemeExtension on BuildContext {
   /// Get current theme
   ThemeData get theme => Theme.of(this);
-  
+
   /// Get current text theme
   TextTheme get textTheme => Theme.of(this).textTheme;
-  
+
   /// Get current color scheme
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
-  
+
   /// Quick access to app colors
   AppColorsAccess get colors => AppColorsAccess();
-  
+
   /// Quick access to app typography
   AppTypographyAccess get typography => AppTypographyAccess();
-  
+
   /// Quick access to app spacing
   AppSpacingAccess get spacing => AppSpacingAccess();
-  
+
   /// Check if device is in dark mode
   bool get isDarkMode => Theme.of(this).brightness == Brightness.dark;
-  
+
   /// Get screen size
   Size get screenSize => MediaQuery.of(this).size;
-  
+
   /// Get screen width
   double get screenWidth => MediaQuery.of(this).size.width;
-  
+
   /// Get screen height
   double get screenHeight => MediaQuery.of(this).size.height;
-  
+
   /// Check if screen is small (< 600px)
   bool get isSmallScreen => MediaQuery.of(this).size.width < 600;
-  
+
   /// Check if screen is medium (600px - 840px)
   bool get isMediumScreen {
     final width = MediaQuery.of(this).size.width;
     return width >= 600 && width < 840;
   }
-  
+
   /// Check if screen is large (>= 840px)
   bool get isLargeScreen => MediaQuery.of(this).size.width >= 840;
-  
+
   /// Get safe area padding
   EdgeInsets get safeAreaPadding => MediaQuery.of(this).padding;
 }
@@ -112,37 +112,37 @@ class AppSpacingAccess {
 extension TextStyleExtension on TextStyle {
   /// Apply primary text color
   TextStyle get primary => copyWith(color: AppColors.textPrimary);
-  
+
   /// Apply secondary text color
   TextStyle get secondary => copyWith(color: AppColors.textSecondary);
-  
+
   /// Apply tertiary text color
   TextStyle get tertiary => copyWith(color: AppColors.textTertiary);
-  
+
   /// Apply brand primary color
   TextStyle get brandPrimary => copyWith(color: AppColors.primary);
-  
+
   /// Apply accent color
   TextStyle get accent => copyWith(color: AppColors.accent);
-  
+
   /// Apply white color
   TextStyle get white => copyWith(color: AppColors.secondary);
-  
+
   /// Apply error color
   TextStyle get error => copyWith(color: AppColors.error);
-  
+
   /// Apply custom color
   TextStyle colored(Color color) => copyWith(color: color);
-  
+
   /// Apply bold weight
   TextStyle get bold => copyWith(fontWeight: FontWeight.bold);
-  
+
   /// Apply semi-bold weight
   TextStyle get semiBold => copyWith(fontWeight: FontWeight.w600);
-  
+
   /// Apply medium weight
   TextStyle get medium => copyWith(fontWeight: FontWeight.w500);
-  
+
   /// Apply light weight
   TextStyle get light => copyWith(fontWeight: FontWeight.w300);
 }

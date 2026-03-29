@@ -1,5 +1,5 @@
 /// Medix AI Theme Configuration
-/// 
+///
 /// Main theme configuration for the application.
 /// Combines colors, typography, and component themes.
 
@@ -15,11 +15,11 @@ class AppTheme {
   // ============================================================================
   // LIGHT THEME (Default)
   // ============================================================================
-  
+
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
-      
+
       // Color Scheme
       colorScheme: ColorScheme.light(
         primary: AppColors.primary,
@@ -34,10 +34,10 @@ class AppTheme {
         outline: AppColors.border,
         outlineVariant: AppColors.border,
       ),
-      
+
       // Scaffold Background
       scaffoldBackgroundColor: AppColors.background,
-      
+
       // App Bar Theme
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.background,
@@ -47,7 +47,7 @@ class AppTheme {
         titleTextStyle: AppTypography.h3Card,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
-      
+
       // Text Theme
       textTheme: TextTheme(
         displayLarge: AppTypography.h1Hero,
@@ -66,7 +66,7 @@ class AppTheme {
         labelMedium: AppTypography.label,
         labelSmall: AppTypography.labelSmall,
       ),
-      
+
       // Card Theme
       cardTheme: CardTheme(
         color: AppColors.surface,
@@ -77,12 +77,13 @@ class AppTheme {
         ),
         margin: EdgeInsets.zero,
       ),
-      
+
       // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.surface,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide(color: AppColors.border, width: 1),
@@ -104,10 +105,11 @@ class AppTheme {
           borderSide: BorderSide(color: AppColors.error, width: 2),
         ),
         labelStyle: AppTypography.bodyRegular,
-        hintStyle: AppTypography.bodySmall.copyWith(color: AppColors.textTertiary),
+        hintStyle:
+            AppTypography.bodySmall.copyWith(color: AppColors.textTertiary),
         errorStyle: AppTypography.bodySmall.copyWith(color: AppColors.error),
       ),
-      
+
       // Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -123,7 +125,7 @@ class AppTheme {
           textStyle: AppTypography.buttonPrimary,
         ),
       ),
-      
+
       // Outlined Button Theme
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
@@ -137,7 +139,7 @@ class AppTheme {
           textStyle: AppTypography.buttonSecondary,
         ),
       ),
-      
+
       // Text Button Theme
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
@@ -147,7 +149,7 @@ class AppTheme {
           textStyle: AppTypography.buttonText,
         ),
       ),
-      
+
       // Icon Button Theme
       iconButtonTheme: IconButtonThemeData(
         style: IconButton.styleFrom(
@@ -155,7 +157,7 @@ class AppTheme {
           disabledForegroundColor: AppColors.textTertiary,
         ),
       ),
-      
+
       // Floating Action Button Theme
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: AppColors.primary,
@@ -165,7 +167,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-      
+
       // Chip Theme
       chipTheme: ChipThemeData(
         backgroundColor: AppColors.primary,
@@ -175,14 +177,14 @@ class AppTheme {
           borderRadius: BorderRadius.circular(999),
         ),
       ),
-      
+
       // Divider Theme
       dividerTheme: DividerThemeData(
         color: AppColors.border,
         thickness: 1,
         space: 1,
       ),
-      
+
       // Dialog Theme
       dialogTheme: DialogTheme(
         backgroundColor: AppColors.surface,
@@ -193,7 +195,7 @@ class AppTheme {
         titleTextStyle: AppTypography.h3Card,
         contentTextStyle: AppTypography.bodyRegular,
       ),
-      
+
       // Bottom Sheet Theme
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: AppColors.surface,
@@ -202,7 +204,7 @@ class AppTheme {
           borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
         ),
       ),
-      
+
       // Snackbar Theme
       snackBarTheme: SnackBarThemeData(
         backgroundColor: AppColors.textPrimary,
@@ -214,7 +216,7 @@ class AppTheme {
         ),
         behavior: SnackBarBehavior.floating,
       ),
-      
+
       // Progress Indicator Theme
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: AppColors.primary,
@@ -226,7 +228,7 @@ class AppTheme {
   // ============================================================================
   // ALTERNATIVE THEMES (for future use)
   // ============================================================================
-  
+
   /// Blue theme variant
   static ThemeData get blueTheme {
     return lightTheme.copyWith(
@@ -235,7 +237,7 @@ class AppTheme {
       ),
     );
   }
-  
+
   /// Green theme variant
   static ThemeData get greenTheme {
     return lightTheme.copyWith(

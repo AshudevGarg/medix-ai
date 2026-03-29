@@ -16,7 +16,7 @@ const Dashboard = () => {
   const [lastRefresh, setLastRefresh] = useState(new Date())
   const [loading, setLoading] = useState(true)
   const [dashboardStats, setDashboardStats] = useState(null)
-  
+
   // Mobile state management
   const [activeTab, setActiveTab] = useState('queue') // 'queue', 'encounter', 'history'
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -33,7 +33,7 @@ const Dashboard = () => {
   const loadInitialData = useCallback(async () => {
     try {
       setLoading(true)
-      
+
       const [patientsData, queueData, statsData] = await Promise.all([
         patientsAPI.getAll(),
         queueAPI.getCurrent(),
@@ -42,7 +42,7 @@ const Dashboard = () => {
 
       const transformedPatients = patientsData.patients.map(transformers.transformPatient)
       const updatedPatients = updatePatientsWithQueueData(transformedPatients, queueData.queue)
-      
+
       setPatients(updatedPatients)
       setDashboardStats(statsData)
       setLastRefresh(new Date())
@@ -70,7 +70,7 @@ const Dashboard = () => {
   }
 
   const handleQueueUpdate = useCallback((queueData) => {
-    setPatients(prevPatients => 
+    setPatients(prevPatients =>
       updatePatientsWithQueueData(prevPatients, queueData.queue)
     )
     setLastRefresh(new Date())
@@ -87,12 +87,12 @@ const Dashboard = () => {
 
   const handlePatientSelect = async (patient) => {
     setSelectedPatient(patient)
-    
+
     // On mobile, switch to encounter tab when patient is selected
     if (window.innerWidth < 1024) {
       setActiveTab('encounter')
     }
-    
+
     // Load encounter data and timeline for the LiveEncounter component
     try {
       const [latestNote, timeline] = await Promise.all([
@@ -142,15 +142,14 @@ const Dashboard = () => {
     return (
       <div className="lg:hidden flex flex-col h-full">
         {/* Mobile Tab Navigation */}
-        <div 
+        <div
           className="flex border-b"
           style={{ borderColor: colors.border }}
         >
           <button
             onClick={() => handleTabChange('queue')}
-            className={`flex-1 flex items-center justify-center gap-2 p-4 text-sm font-medium transition-colors ${
-              activeTab === 'queue' ? 'border-b-2' : ''
-            }`}
+            className={`flex-1 flex items-center justify-center gap-2 p-4 text-sm font-medium transition-colors ${activeTab === 'queue' ? 'border-b-2' : ''
+              }`}
             style={{
               color: activeTab === 'queue' ? colors.primary : colors.textSecondary,
               borderBottomColor: activeTab === 'queue' ? colors.primary : 'transparent'
@@ -161,9 +160,8 @@ const Dashboard = () => {
           </button>
           <button
             onClick={() => handleTabChange('encounter')}
-            className={`flex-1 flex items-center justify-center gap-2 p-4 text-sm font-medium transition-colors ${
-              activeTab === 'encounter' ? 'border-b-2' : ''
-            }`}
+            className={`flex-1 flex items-center justify-center gap-2 p-4 text-sm font-medium transition-colors ${activeTab === 'encounter' ? 'border-b-2' : ''
+              }`}
             style={{
               color: activeTab === 'encounter' ? colors.primary : colors.textSecondary,
               borderBottomColor: activeTab === 'encounter' ? colors.primary : 'transparent'
@@ -174,9 +172,8 @@ const Dashboard = () => {
           </button>
           <button
             onClick={() => handleTabChange('history')}
-            className={`flex-1 flex items-center justify-center gap-2 p-4 text-sm font-medium transition-colors ${
-              activeTab === 'history' ? 'border-b-2' : ''
-            }`}
+            className={`flex-1 flex items-center justify-center gap-2 p-4 text-sm font-medium transition-colors ${activeTab === 'history' ? 'border-b-2' : ''
+              }`}
             style={{
               color: activeTab === 'history' ? colors.primary : colors.textSecondary,
               borderBottomColor: activeTab === 'history' ? colors.primary : 'transparent'
@@ -217,12 +214,12 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div 
+      <div
         className="h-screen flex items-center justify-center"
         style={{ backgroundColor: colors.background }}
       >
         <div className="text-center">
-          <div 
+          <div
             className="w-16 h-16 border-4 border-t-transparent border-solid rounded-full animate-spin mx-auto mb-4"
             style={{ borderColor: colors.primary }}
           />
@@ -233,39 +230,39 @@ const Dashboard = () => {
   }
 
   return (
-    <div 
+    <div
       className="h-screen flex flex-col"
       style={{ backgroundColor: colors.background }}
     >
-      <div 
+      <div
         className="h-16 flex items-center justify-between px-4 sm:px-6 border-b"
-        style={{ 
+        style={{
           backgroundColor: colors.surface,
-          borderColor: colors.border 
+          borderColor: colors.border
         }}
       >
         <div className="flex items-center gap-3 sm:gap-6">
-          <h1 
+          <h1
             className="text-lg sm:text-xl font-ptserif font-medium"
             style={{ color: colors.textSecondary }}
           >
             Medix AI
           </h1>
-          
+
           {/* Desktop Dashboard Label & Navigation */}
           <div className="hidden sm:flex items-center gap-4">
-            <div 
+            <div
               className="h-4 w-px"
               style={{ backgroundColor: colors.border }}
             />
-            <span 
+            <span
               className="text-sm font-medium"
               style={{ color: colors.primary }}
             >
               Doctor's Dashboard
             </span>
           </div>
-          
+
           {/* Desktop Navigation Buttons */}
           <div className="hidden lg:flex items-center gap-3 ml-6">
             <button
@@ -296,7 +293,7 @@ const Dashboard = () => {
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Mobile Navigation Dropdown */}
           {isMobileMenuOpen && (
-            <div 
+            <div
               className="absolute top-16 left-0 right-0 lg:hidden border-b z-50"
               style={{
                 backgroundColor: colors.surface,
@@ -317,15 +314,15 @@ const Dashboard = () => {
               </div>
             </div>
           )}
-          
+
           <div className="text-right">
-            <div 
+            <div
               className="text-sm font-medium"
               style={{ color: colors.textPrimary }}
             >
               Dr. Shubham
             </div>
-            <div 
+            <div
               className="text-xs hidden sm:block"
               style={{ color: colors.textSecondary }}
             >
@@ -339,7 +336,7 @@ const Dashboard = () => {
       <div className="flex-1 overflow-hidden">
         {/* Desktop Layout (3-column) */}
         <div className="hidden lg:flex h-full">
-          <div 
+          <div
             className="w-80 border-r shrink-0"
             style={{ borderColor: colors.border }}
           >
@@ -360,7 +357,7 @@ const Dashboard = () => {
             />
           </div>
 
-          <div 
+          <div
             className="w-96 border-l shrink-0"
             style={{ borderColor: colors.border }}
           >
@@ -374,12 +371,12 @@ const Dashboard = () => {
         {renderMobileView()}
       </div>
 
-      <div 
+      <div
         className="h-8 flex items-center justify-between px-4 sm:px-6 text-xs border-t"
-        style={{ 
+        style={{
           backgroundColor: colors.surfaceSecondary,
           borderColor: colors.border,
-          color: colors.textSecondary 
+          color: colors.textSecondary
         }}
       >
         <div className="flex items-center gap-2 sm:gap-4">

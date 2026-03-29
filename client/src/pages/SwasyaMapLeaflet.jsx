@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { 
-  FiArrowLeft, 
-  FiMenu, 
-  FiMapPin, 
-  FiAlertTriangle, 
+import {
+  FiArrowLeft,
+  FiMenu,
+  FiMapPin,
+  FiAlertTriangle,
   FiActivity,
   FiCalendar,
   FiFilter,
@@ -167,7 +167,7 @@ const punjabOutbreakData = [
 // Component to handle map zoom controls
 const MapController = ({ zoomLevel }) => {
   const map = useMap();
-  
+
   useEffect(() => {
     map.setZoom(zoomLevel);
   }, [map, zoomLevel]);
@@ -232,40 +232,40 @@ const MedixMapLeaflet = () => {
   const increasingTrendCount = filteredData.filter(d => d.trend === 'increasing').length;
 
   return (
-    <div 
+    <div
       className="h-screen flex flex-col"
       style={{ backgroundColor: colors.background }}
     >
       {/* Header - Same as Dashboard */}
-      <div 
+      <div
         className="h-16 flex items-center justify-between px-4 sm:px-6 border-b"
-        style={{ 
+        style={{
           backgroundColor: colors.surface,
-          borderColor: colors.border 
+          borderColor: colors.border
         }}
       >
         <div className="flex items-center gap-3 sm:gap-6">
-          <h1 
+          <h1
             className="text-lg sm:text-xl font-ptserif font-medium"
             style={{ color: colors.textSecondary }}
           >
             Medix AI
           </h1>
-          
+
           {/* Desktop Dashboard Label & Navigation */}
           <div className="hidden sm:flex items-center gap-4">
-            <div 
+            <div
               className="h-4 w-px"
               style={{ backgroundColor: colors.border }}
             />
-            <span 
+            <span
               className="text-sm font-medium"
               style={{ color: colors.primary }}
             >
               Outbreak Analytics
             </span>
           </div>
-          
+
           {/* Desktop Navigation Buttons */}
           <div className="hidden lg:flex items-center gap-3 ml-6">
             <button
@@ -296,7 +296,7 @@ const MedixMapLeaflet = () => {
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Mobile Navigation Dropdown */}
           {isMobileMenuOpen && (
-            <div 
+            <div
               className="absolute top-16 left-0 right-0 lg:hidden border-b z-50"
               style={{
                 backgroundColor: colors.surface,
@@ -318,15 +318,15 @@ const MedixMapLeaflet = () => {
               </div>
             </div>
           )}
-          
+
           <div className="text-right">
-            <div 
+            <div
               className="text-sm font-medium"
               style={{ color: colors.textPrimary }}
             >
               Dr. Shubham
             </div>
-            <div 
+            <div
               className="text-xs hidden sm:block"
               style={{ color: colors.textSecondary }}
             >
@@ -338,26 +338,26 @@ const MedixMapLeaflet = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
-        
+
         {/* Controls Panel */}
-        <div 
+        <div
           className="lg:w-80 border-b lg:border-b-0 lg:border-r p-4 space-y-4 overflow-y-auto"
-          style={{ 
+          style={{
             backgroundColor: colors.surface,
-            borderColor: colors.border 
+            borderColor: colors.border
           }}
         >
           {/* Statistics Cards */}
           <div className="space-y-3">
-            <h3 
+            <h3
               className="text-lg font-medium"
               style={{ color: colors.textPrimary }}
             >
               Punjab Outbreak Summary
             </h3>
-            
+
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
-              <div 
+              <div
                 className="p-4 rounded-xl"
                 style={{ backgroundColor: colors.surfaceSecondary }}
               >
@@ -375,7 +375,7 @@ const MedixMapLeaflet = () => {
                 </div>
               </div>
 
-              <div 
+              <div
                 className="p-4 rounded-xl"
                 style={{ backgroundColor: colors.surfaceSecondary }}
               >
@@ -393,7 +393,7 @@ const MedixMapLeaflet = () => {
                 </div>
               </div>
 
-              <div 
+              <div
                 className="p-4 rounded-xl"
                 style={{ backgroundColor: colors.surfaceSecondary }}
               >
@@ -415,13 +415,13 @@ const MedixMapLeaflet = () => {
 
           {/* Filters */}
           <div className="space-y-4">
-            <h4 
+            <h4
               className="text-sm font-medium"
               style={{ color: colors.textPrimary }}
             >
               Filters & Controls
             </h4>
-            
+
             {/* Severity Filter */}
             <div>
               <label className="text-xs font-medium" style={{ color: colors.textSecondary }}>
@@ -482,9 +482,9 @@ const MedixMapLeaflet = () => {
                 >
                   <FiZoomOut size={14} />
                 </button>
-                <span className="text-sm px-3 py-1 rounded" style={{ 
+                <span className="text-sm px-3 py-1 rounded" style={{
                   backgroundColor: colors.surfaceSecondary,
-                  color: colors.textPrimary 
+                  color: colors.textPrimary
                 }}>
                   {zoomLevel}x
                 </span>
@@ -504,7 +504,7 @@ const MedixMapLeaflet = () => {
 
           {/* Legend */}
           <div className="space-y-3">
-            <h4 
+            <h4
               className="text-sm font-medium"
               style={{ color: colors.textPrimary }}
             >
@@ -512,7 +512,7 @@ const MedixMapLeaflet = () => {
             </h4>
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <div 
+                <div
                   className="w-4 h-4 rounded-full"
                   style={{ backgroundColor: colors.error }}
                 />
@@ -521,7 +521,7 @@ const MedixMapLeaflet = () => {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div 
+                <div
                   className="w-4 h-4 rounded-full"
                   style={{ backgroundColor: colors.warning }}
                 />
@@ -530,7 +530,7 @@ const MedixMapLeaflet = () => {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div 
+                <div
                   className="w-4 h-4 rounded-full"
                   style={{ backgroundColor: colors.success }}
                 />
@@ -553,12 +553,12 @@ const MedixMapLeaflet = () => {
             style={{ backgroundColor: colors.surfaceSecondary }}
           >
             <MapController zoomLevel={zoomLevel} />
-            
+
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            
+
             {filteredData.map((district) => (
               <CircleMarker
                 key={district.id}
@@ -581,7 +581,7 @@ const MedixMapLeaflet = () => {
                         {district.name}
                       </h3>
                     </div>
-                    
+
                     <div className="space-y-2 mb-3">
                       <div className="flex justify-between">
                         <span className="text-sm" style={{ color: colors.textSecondary }}>Total Cases:</span>
@@ -593,11 +593,11 @@ const MedixMapLeaflet = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm" style={{ color: colors.textSecondary }}>Trend:</span>
-                        <span 
+                        <span
                           className="text-sm font-medium capitalize"
-                          style={{ 
-                            color: district.trend === 'increasing' ? colors.error : 
-                                   district.trend === 'decreasing' ? colors.success : colors.warning
+                          style={{
+                            color: district.trend === 'increasing' ? colors.error :
+                              district.trend === 'decreasing' ? colors.success : colors.warning
                           }}
                         >
                           {district.trend}
@@ -649,7 +649,7 @@ const MedixMapLeaflet = () => {
 
           {/* Map Overlay - Quick Stats */}
           <div className="absolute top-4 right-4 z-10">
-            <div 
+            <div
               className="bg-white rounded-lg shadow-lg p-3 border"
               style={{
                 backgroundColor: colors.surface,
@@ -673,14 +673,14 @@ const MedixMapLeaflet = () => {
       {/* Selected District Details Modal */}
       {selectedDistrict && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div 
+          <div
             className="max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-2xl"
             style={{ backgroundColor: colors.surface }}
           >
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div 
+                  <div
                     className="w-8 h-8 rounded-full flex items-center justify-center"
                     style={{ backgroundColor: getMarkerColor(selectedDistrict.severity) + '20' }}
                   >
@@ -704,7 +704,7 @@ const MedixMapLeaflet = () => {
 
               {/* Detailed Statistics */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div 
+                <div
                   className="p-4 rounded-xl text-center"
                   style={{ backgroundColor: colors.surfaceSecondary }}
                 >
@@ -715,7 +715,7 @@ const MedixMapLeaflet = () => {
                     Fever Cases
                   </div>
                 </div>
-                <div 
+                <div
                   className="p-4 rounded-xl text-center"
                   style={{ backgroundColor: colors.surfaceSecondary }}
                 >
@@ -726,7 +726,7 @@ const MedixMapLeaflet = () => {
                     Respiratory
                   </div>
                 </div>
-                <div 
+                <div
                   className="p-4 rounded-xl text-center"
                   style={{ backgroundColor: colors.surfaceSecondary }}
                 >
@@ -737,7 +737,7 @@ const MedixMapLeaflet = () => {
                     GI Issues
                   </div>
                 </div>
-                <div 
+                <div
                   className="p-4 rounded-xl text-center"
                   style={{ backgroundColor: colors.surfaceSecondary }}
                 >
@@ -758,7 +758,7 @@ const MedixMapLeaflet = () => {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedDistrict.details.affectedAreas.map((area, index) => (
-                      <span 
+                      <span
                         key={index}
                         className="px-3 py-1 rounded-full text-xs"
                         style={{
@@ -800,9 +800,9 @@ const MedixMapLeaflet = () => {
                     <div className="space-y-1 text-sm">
                       <div className="flex justify-between">
                         <span style={{ color: colors.textSecondary }}>Severity:</span>
-                        <span 
+                        <span
                           className="capitalize font-medium"
-                          style={{ 
+                          style={{
                             color: getMarkerColor(selectedDistrict.severity)
                           }}
                         >
@@ -811,11 +811,11 @@ const MedixMapLeaflet = () => {
                       </div>
                       <div className="flex justify-between">
                         <span style={{ color: colors.textSecondary }}>Trend:</span>
-                        <span 
+                        <span
                           className="capitalize font-medium"
-                          style={{ 
-                            color: selectedDistrict.trend === 'increasing' ? colors.error : 
-                                   selectedDistrict.trend === 'decreasing' ? colors.success : colors.warning
+                          style={{
+                            color: selectedDistrict.trend === 'increasing' ? colors.error :
+                              selectedDistrict.trend === 'decreasing' ? colors.success : colors.warning
                           }}
                         >
                           {selectedDistrict.trend}

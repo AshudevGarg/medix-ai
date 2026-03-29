@@ -1,8 +1,8 @@
 import React from 'react'
 import { colors } from '../../utils/colors'
-import { 
-  FiMic, 
-  FiMonitor, 
+import {
+  FiMic,
+  FiMonitor,
   FiMap,
   FiLink,
   FiWifi,
@@ -70,24 +70,24 @@ const CoreFeatures = () => {
   ];
 
   return (
-    <section 
-      className="py-20 px-6" 
-      style={{backgroundColor: colors.surfaceSecondary}}
+    <section
+      className="py-20 px-6"
+      style={{ backgroundColor: colors.surfaceSecondary }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-6">
-          <h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight" 
-            style={{color: colors.textPrimary}}
+          <h2
+            className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight"
+            style={{ color: colors.textPrimary }}
           >
             Core features — built for{' '}
-            <span className="font-medium" style={{color: colors.primary}}>speed and clarity</span>
+            <span className="font-medium" style={{ color: colors.primary }}>speed and clarity</span>
           </h2>
-          
-          <p 
-            className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto font-light" 
-            style={{color: colors.textSecondary}}
+
+          <p
+            className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto font-light"
+            style={{ color: colors.textSecondary }}
           >
             Everything a PHC needs to capture, summarize and act on patient data.
           </p>
@@ -97,10 +97,10 @@ const CoreFeatures = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature) => {
             const IconComponent = feature.icon;
-            
+
             return (
-              <div 
-                key={feature.id} 
+              <div
+                key={feature.id}
                 className="rounded-3xl p-8 space-y-6 transition-all duration-300 hover:scale-105"
                 style={{
                   backgroundColor: colors.surface,
@@ -109,16 +109,16 @@ const CoreFeatures = () => {
               >
                 {/* Icon */}
                 <div className="flex justify-start">
-                  <div 
+                  <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center"
                     style={{
                       backgroundColor: feature.isComingSoon ? colors.textTertiary : colors.primary,
                       opacity: feature.isComingSoon ? 0.6 : 1
                     }}
                   >
-                    <IconComponent 
-                      size={24} 
-                      style={{color: colors.secondary}}
+                    <IconComponent
+                      size={24}
+                      style={{ color: colors.secondary }}
                       aria-label={feature.alt}
                     />
                   </div>
@@ -127,14 +127,14 @@ const CoreFeatures = () => {
                 {/* Content */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-2">
-                    <h3 
-                      className="text-xl font-medium leading-tight" 
-                      style={{color: colors.textPrimary}}
+                    <h3
+                      className="text-xl font-medium leading-tight"
+                      style={{ color: colors.textPrimary }}
                     >
                       {feature.title}
                     </h3>
                     {feature.isComingSoon && (
-                      <span 
+                      <span
                         className="text-xs px-2 py-1 rounded-full font-medium"
                         style={{
                           backgroundColor: colors.textTertiary,
@@ -145,17 +145,17 @@ const CoreFeatures = () => {
                       </span>
                     )}
                   </div>
-                  
-                  <p 
-                    className="text-base leading-relaxed font-light" 
-                    style={{color: colors.textSecondary}}
+
+                  <p
+                    className="text-base leading-relaxed font-light"
+                    style={{ color: colors.textSecondary }}
                   >
                     {feature.description}
                   </p>
-                  
-                  <p 
-                    className="text-sm font-medium" 
-                    style={{color: colors.textTertiary}}
+
+                  <p
+                    className="text-sm font-medium"
+                    style={{ color: colors.textTertiary }}
                   >
                     {feature.microcopy}
                   </p>
@@ -163,7 +163,7 @@ const CoreFeatures = () => {
 
                 {/* Micro CTA */}
                 <div className="pt-2">
-                  <button 
+                  <button
                     className="group flex items-center gap-2 text-sm font-medium transition-colors duration-200"
                     style={{
                       color: feature.isComingSoon ? colors.textTertiary : colors.primary
@@ -182,8 +182,8 @@ const CoreFeatures = () => {
                   >
                     {feature.cta}
                     {!feature.isComingSoon && (
-                      <FiArrowRight 
-                        size={14} 
+                      <FiArrowRight
+                        size={14}
                         className="transition-transform duration-200 group-hover:translate-x-1"
                       />
                     )}
@@ -196,14 +196,14 @@ const CoreFeatures = () => {
 
         {/* Optional Bottom CTA */}
         <div className="text-center mt-16 space-y-4">
-          <p 
-            className="text-lg font-light" 
-            style={{color: colors.textSecondary}}
+          <p
+            className="text-lg font-light"
+            style={{ color: colors.textSecondary }}
           >
             Ready to streamline your clinic workflow?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button 
+            <button
               className="px-8 py-3 rounded-full text-base font-medium transition-colors duration-200"
               style={{
                 backgroundColor: colors.primary,
@@ -214,7 +214,7 @@ const CoreFeatures = () => {
             >
               Schedule a demo
             </button>
-            <button 
+            <button
               className="px-8 py-3 text-base font-medium transition-colors duration-200 rounded-full"
               style={{
                 backgroundColor: 'transparent',
