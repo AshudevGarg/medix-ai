@@ -6,7 +6,7 @@ class Config {
 
   // IMPORTANT: This is auto-updated by setup-ip.sh - modify the .env file to change
   static const String apiBaseUrl =
-      'http://192.168.1.228:8000'; // Real device (YOUR IP)
+      'http://10.95.55.131:8000'; // Real device (YOUR IP)
 
   // API Endpoints - Updated for new modular backend
   static const String patientsEndpoint = '$apiBaseUrl/patients';

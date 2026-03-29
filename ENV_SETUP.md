@@ -8,7 +8,7 @@ This project requires environment variables for both the backend and frontend to
 
 ---
 
-## 📋 Backend Environment (backend/simple_backend/.env)
+## Backend Environment (backend/simple_backend/.env)
 
 ### Required Variables
 
